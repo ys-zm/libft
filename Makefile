@@ -6,11 +6,13 @@
 #    By: yzaim <marvin@codam.nl>                      +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/06 11:28:58 by yzaim         #+#    #+#                  #
-#    Updated: 2022/10/13 19:49:49 by yzaim         ########   odam.nl          #
+#    Updated: 2022/10/17 20:41:20 by yzaim         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
+
+HEADER = libft.h
 
 SRCFILES = ft_isalpha.c \
 	ft_isdigit.c \
@@ -49,6 +51,20 @@ SRCFILES = ft_isalpha.c \
 
 OBJFILES = $(SRCFILES:.c=.o)
 
+ALL = $(BONUSFILES) $(SRCFILES)
+
+BONUSFILES = ft_lstnew_bonus.c \
+		#	 ft_lstadd_front_bonus.c \
+			 ft_lstsize_bonus.c \
+			 ft_lstlast_bonus.c \
+			 ft_lstadd_back_bonus.c \
+			 ft_lstdelone_bonus.c \
+			 ft_lstclear_bonus.c \
+			 ft_lstiter_bonus.c \
+			 ft_lstmap_bonus.c
+
+ALLOBJ = $(ALL:.c=.o)
+
 CC = gcc
 
 CFLAGS = -Wall -Werror -Wextra
@@ -59,20 +75,21 @@ ARFLAGS = -rcs
 
 all: $(NAME)
 
-$(NAME): $(OBJFILES)
+$(NAME): $(OBJFILES) $(HEADER)
 	$(AR) $(ARFLAGS) $@ $^
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c -o $@ $^
 
 clean:
-	rm -f $(OBJFILES)
+	rm -f $(ALLOBJ)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-#bonus: ft_lst*.o
+bonus: $(ALLOBJ)
+	$(AR) $(ARFLAGS) $(NAME) $^
 
 .PHONY: clean fclean all re
