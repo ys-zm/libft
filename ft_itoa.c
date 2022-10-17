@@ -6,7 +6,7 @@
 /*   By: yzaim <marvin@codam.nl>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/15 14:47:39 by yzaim         #+#    #+#                 */
-/*   Updated: 2022/10/15 15:06:04 by yzaim         ########   odam.nl         */
+/*   Updated: 2022/10/17 17:08:41 by yzaim         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ static int	len(int n)
 	{
 		x = n * -1;
 		i ++;
-	//	printf("x is: %d\n", x);
 	}
 	else
 		x = n;
@@ -36,22 +35,18 @@ static int	len(int n)
 	{
 		x /= 10;
 		i++;
-	//	printf("x is now: %d\n", x);
 	}
-	//printf("i is:%d\n", i);
-	return i;
-	//printf("i is:%d\n", i);
+	return (i);
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	unsigned int	x;
 	char			*str;
 	int				i;
-	
+
 	x = n;
 	i = len(n) - 1;
-	//printf("i: %d\n", i);
 	str = malloc(sizeof(char) * (i + 2));
 	if (!str)
 		return (0);
@@ -63,17 +58,12 @@ char *ft_itoa(int n)
 		x = n * -1;
 		str[0] = '-';
 	}
-	//printf("x is: %d\n", x);
 	while (x > 0)
 	{
 		str[i] = (x % 10) + 48;
-		//printf("char: %c\n", str[i]);
 		x /= 10;
 		i--;
 	}
-	//printf("x =: %d\n", x);
-	//printf("%c\n", str[0]);
-	//printf("%c\n", str[1]);
 	return (str);
 }
 

@@ -6,7 +6,7 @@
 /*   By: yzaim <marvin@codam.nl>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/13 11:50:19 by yzaim         #+#    #+#                 */
-/*   Updated: 2022/10/15 16:10:44 by yzaim         ########   odam.nl         */
+/*   Updated: 2022/10/17 17:16:32 by yzaim         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,8 @@ void	min_int(int fd)
 	write(fd, "-2147483648", 11);
 }
 
-
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	c;
-
 	if (n == -2147483648)
 	{
 		min_int(fd);
@@ -45,8 +42,7 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	if (n < 10)
 	{
-		c = n + '0';
-		write(fd, &c, 1);
+		ft_putchar_fd(n + '0', fd);
 	}
 	else
 	{
@@ -54,7 +50,6 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd(n % 10, fd);
 	}
 }
-
 /*int	main(void)
 {
 	ft_putnbr_fd(-57, 1);

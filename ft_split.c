@@ -6,7 +6,7 @@
 /*   By: yzaim <marvin@codam.nl>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/12 18:10:50 by yzaim         #+#    #+#                 */
-/*   Updated: 2022/10/15 17:32:19 by yzaim         ########   odam.nl         */
+/*   Updated: 2022/10/17 19:20:41 by yzaim         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,18 +40,20 @@ static int	num_str(const char *str, char sp)
 
 	count = 0;
 	i = 0;
+	while (str[i] == sp && str[i] != 0)
+		i++;
 	while (str[i] != 0)
 	{
-		if (i == 0 && str[i] != sp)
-			count++;
-		else if (str[i - 1] == sp && str[i] != sp)
-			count++;
-		i++;
+		while (str[i] != sp && str[i] != 0)
+			i++;
+		count++;
+		while (str[i] == sp && str[i] != 0)
+			i++;
 	}
 	return (count);
 }
 
-static void	free_mem(char **arr)
+static void	*free_mem(char **arr)
 {
 	int	i;
 
@@ -61,6 +63,8 @@ static void	free_mem(char **arr)
 		free(arr[i]);
 		i++;
 	}
+	free(arr);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
@@ -80,11 +84,7 @@ char	**ft_split(char const *s, char c)
 			s++;
 		arr[i] = ft_substr(s, 0, s_len(s, c));
 		if (arr[i] == 0)
-		{
-			free_mem(arr);
-			free(arr);
-			return (NULL);
-		}
+			return (free_mem(arr));
 		while (*s && *s != c)
 			s++;
 		i++;

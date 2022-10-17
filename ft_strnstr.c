@@ -6,13 +6,14 @@
 /*   By: yzaim <marvin@codam.nl>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/06 13:37:16 by yzaim         #+#    #+#                 */
-/*   Updated: 2022/10/14 18:46:36 by yzaim         ########   odam.nl         */
+/*   Updated: 2022/10/17 17:36:57 by yzaim         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+#include <stdio.h>
+#include <string.h>
+/*char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	int		i;
 	int		n_len;
@@ -20,13 +21,14 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 	n_len = ft_strlen(needle);
 	i = 0;
+	save = (char *)haystack;
 	if (!*needle)
-		return ((char *)haystack);
-	while (*haystack && len > 0)
+		return (save);
+	while (*haystack && len > 0 && *needle)
 	{
 		i = 0;
 		save = (char *)haystack;
-		while (*haystack == needle[i] && len > 0)
+		while (*haystack == *(needle + i) && len > 0)
 		{
 			
 			if (i == n_len - 1)
@@ -35,17 +37,46 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 			haystack++;
 			i++;
 		}
-		len--;
+		if (i-- > 0)
+		{
+			haystack = save;
+			len++;
+		}
+		if (i == 0)
+		{
+			len--;
+			haystack++;
+		}
+	}
+	return (NULL);
+}*/
+
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+{
+	size_t	n_len;
+
+	n_len = ft_strlen(needle);
+	if (!*needle)
+		return ((char *)haystack);
+	while (*haystack && len > 0)
+	{
+		if (ft_strncmp(haystack, needle, n_len) == 0 && len >= n_len)
+		{	
+			return ((char *)haystack);
+		}
 		haystack++;
+		len--;
 	}
 	return (NULL);
 }
-
 /*int	main(void)
 {
-	char	str[] = "hello";
-	char	str2[] = "hi hello there";
+	char	str[30] = "aaabcabcd";
+	char	str2[10] = "aabcd";
 
-	printf("my func: %s\n", ft_strnstr(str2, str, 15));
+//	printf("my func: %s\n", ft_strnstr(str, "abcd", 9));
+	printf("my func: %s\n", ft_strnstr(str, str2, -1));
+
+	printf("original: %s\n", strnstr(str, str2, -1));
+
 }*/
-

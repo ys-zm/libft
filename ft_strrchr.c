@@ -6,7 +6,7 @@
 /*   By: yzaim <marvin@codam.nl>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/06 13:33:11 by yzaim         #+#    #+#                 */
-/*   Updated: 2022/10/15 18:04:28 by yzaim         ########   odam.nl         */
+/*   Updated: 2022/10/17 17:37:31 by yzaim         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strrchr(const char *s, int c)
 	int		s_len;
 	int		i;
 	char	*str;
-	
+
 	str = (char *)s;
 	s_len = ft_strlen(str);
 	i = s_len - 1;
@@ -29,5 +29,5 @@ char	*ft_strrchr(const char *s, int c)
 			return (&str[i]);
 		i--;
 	}
-	return 0;
+	return (0);
 }

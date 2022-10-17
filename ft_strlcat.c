@@ -6,7 +6,7 @@
 /*   By: yzaim <marvin@codam.nl>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/06 13:27:34 by yzaim         #+#    #+#                 */
-/*   Updated: 2022/10/14 15:37:16 by yzaim         ########   odam.nl         */
+/*   Updated: 2022/10/17 16:22:10 by yzaim         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		dst++;
 	if (dstsize > 0)
 	{
-		while (dstsize-- - d_len - 1)
+		while (dstsize-- - d_len - 1 && *src)
 		{
 			*dst++ = *src++;
 		}
@@ -55,11 +55,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 /*int main(void)
 {
-	//char dst1[30] = "123456789";
+	char dst1[30] = "123456789";
 	char dst2[30] = "123456789";
 	char src[] = "aaaaaa";
-
-
 
 	//prinf("return value: %d\n", strlcat(dst2, src, 4));
 	//prinf("return value: %d\n", strlcat(dst2, src, 4));

@@ -6,23 +6,30 @@
 /*   By: yzaim <marvin@codam.nl>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/12 15:32:39 by yzaim         #+#    #+#                 */
-/*   Updated: 2022/10/15 17:34:03 by yzaim         ########   odam.nl         */
+/*   Updated: 2022/10/17 17:30:40 by yzaim         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char			*sub;
-	int				i;
+	unsigned int	i;
 	unsigned int	size;
-	
+
 	size = ft_strlen(s);
 	i = 0;
+	if (*s == 0)
+		return (ft_strdup(s));
+	if (start > size)
+		return (ft_strdup(""));
+	if (start + len > size)
+		len = size - start;
 	sub = malloc(sizeof(char) * (len + 1));
 	if (!sub)
-		return (0);
+		return (NULL);
 	while (len > 0 && start < size)
 	{
 		sub[i] = s[start];
@@ -33,7 +40,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	sub[i] = 0;
 	return (sub);
 }
-
 /*int	main(void)
 {
 	char str[] = "123456789";

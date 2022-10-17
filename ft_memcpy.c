@@ -6,7 +6,7 @@
 /*   By: yzaim <marvin@codam.nl>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 17:12:41 by yzaim         #+#    #+#                 */
-/*   Updated: 2022/10/14 17:57:23 by yzaim         ########   odam.nl         */
+/*   Updated: 2022/10/17 17:10:08 by yzaim         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	char	*save;
+	char		*save;
 	const char	*source;
-	
-	if (dst == (void *)0 || src == NULL)
+
+	if (dst == (void *)0 && !src)
 		return (NULL);
 	save = (char *)dst;
 	source = (const char *)src;
@@ -29,7 +29,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 		source++;
 		n--;
 	}
-	return (void*)dst;
+	return ((void *)dst);
 }
 /*
 int	main(void)

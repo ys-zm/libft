@@ -6,7 +6,7 @@
 /*   By: yzaim <marvin@codam.nl>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/06 13:31:46 by yzaim         #+#    #+#                 */
-/*   Updated: 2022/10/15 18:03:55 by yzaim         ########   odam.nl         */
+/*   Updated: 2022/10/17 17:22:43 by yzaim         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,18 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	
 	if (!s)
 		ft_memset(NULL, 1, 1);
 	while (*s)
 	{
-		if	(*s == (char)c)
-			return (char *)s;
+		if (*s == (char)c)
+			return ((char *)s);
 		s++;
 	}
 	if ((char)c == 0)
-		return (char *)s;
+		return ((char *)s);
 	return (NULL);
 }
-
 /*int	main(void)
 {
 	char str[] = "tripouille";

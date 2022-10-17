@@ -6,7 +6,7 @@
 /*   By: yzaim <marvin@codam.nl>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/13 11:27:40 by yzaim         #+#    #+#                 */
-/*   Updated: 2022/10/13 11:42:21 by yzaim         ########   odam.nl         */
+/*   Updated: 2022/10/17 17:36:40 by yzaim         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	int		len;
 	int		i;
 
-
 	i = 0;
 	len = ft_strlen(s);
 	ret = malloc(sizeof(char) * (len + 1));
@@ -31,5 +30,5 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		i++;
 	}
 	ret[i] = 0;
-	return ret;
+	return (ret);
 }

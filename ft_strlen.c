@@ -6,7 +6,7 @@
 /*   By: yzaim <marvin@codam.nl>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 14:29:22 by yzaim         #+#    #+#                 */
-/*   Updated: 2022/10/06 12:51:48 by yzaim         ########   odam.nl         */
+/*   Updated: 2022/10/17 17:36:04 by yzaim         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ size_t	ft_strlen(const char *s)
 	{
 		x++;
 	}
-	return x;
+	return (x);
 }
