@@ -6,7 +6,7 @@
 /*   By: yzaim <marvin@codam.nl>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 17:12:41 by yzaim         #+#    #+#                 */
-/*   Updated: 2022/10/17 17:10:08 by yzaim         ########   odam.nl         */
+/*   Updated: 2022/10/18 11:33:26 by yzaim         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,15 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return ((void *)dst);
 }
-/*
-int	main(void)
+
+/*int	main(void)
 {
 	char	*dst1;
 	char	*dst2;
 	char	*source;
 
 
-	dst1 = NULL;
+	dst1 = "123456789";
 	dst2 = NULL; 
 	source = NULL; 
 

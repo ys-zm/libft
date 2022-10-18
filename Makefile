@@ -6,7 +6,7 @@
 #    By: yzaim <marvin@codam.nl>                      +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/06 11:28:58 by yzaim         #+#    #+#                  #
-#    Updated: 2022/10/17 20:41:20 by yzaim         ########   odam.nl          #
+#    Updated: 2022/10/18 11:40:49 by yzaim         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,7 @@ OBJFILES = $(SRCFILES:.c=.o)
 ALL = $(BONUSFILES) $(SRCFILES)
 
 BONUSFILES = ft_lstnew_bonus.c \
-		#	 ft_lstadd_front_bonus.c \
+			 ft_lstadd_front_bonus.c \
 			 ft_lstsize_bonus.c \
 			 ft_lstlast_bonus.c \
 			 ft_lstadd_back_bonus.c \

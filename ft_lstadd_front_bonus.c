@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_striteri.c                                      :+:    :+:            */
+/*   ft_lstadd_front_bonus.c                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: yzaim <marvin@codam.nl>                      +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/13 11:40:46 by yzaim         #+#    #+#                 */
-/*   Updated: 2022/10/18 14:53:04 by yzaim         ########   odam.nl         */
+/*   Created: 2022/10/18 12:12:20 by yzaim         #+#    #+#                 */
+/*   Updated: 2022/10/18 14:30:04 by yzaim         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
+#include <stdio.h>
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+
+//t_list *new ---> a pointer to a s_list struct variable
+//storing both content and location of 'next' (pointer to struct)
+//t_list **lst ---> pointer to a t_list pointer 
+//pointing to first variable of the linked list;
+void ft_lstadd_front(t_list **lst, t_list *new)
 {
-	int	i;
+	t_list	*item;
 
-	i = 0;
-	while (s[i] != 0)
+	if (!lst)
+		return (NULL);
+	if (*lst == NULL)
+		*lst = new;
+	else
 	{
-		(*f)(i, &s[i]);
-		i++;
+		new->next = *lst;
+		*lst = new;
 	}
 }

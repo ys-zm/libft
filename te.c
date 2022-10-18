@@ -6,15 +6,9 @@
 
 int	main()
 {
-	char	**arr;
-	int		i;
+	char	dst1[20] = "123456789";
+	char	dst2[20] = "123456789";
 
-	i = 0;
-	arr = ft_split("xxxx|xx|||xxx|", '|');
-	while (arr[i])
-	{
-		printf("%s\n", arr[i]);
-		i++;
-	}
-	return (0);
+	printf("memcpy: %s\n", ft_memcpy(&dst1[3], &dst1[1], 7));
+	printf("memmove: %s\n", ft_memmove(&dst2[3], &dst2[1], 7));
 }

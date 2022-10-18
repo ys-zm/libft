@@ -6,7 +6,7 @@
 /*   By: yzaim <marvin@codam.nl>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/06 12:21:25 by yzaim         #+#    #+#                 */
-/*   Updated: 2022/10/17 20:47:42 by yzaim         ########   odam.nl         */
+/*   Updated: 2022/10/18 14:16:11 by yzaim         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 #ifndef LIBFT_H
 #define LIBFT_H
 
-/*typedef struct s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
-}	t_list;*/
+}	t_list;
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);

@@ -6,18 +6,20 @@
 /*   By: yzaim <marvin@codam.nl>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/17 20:06:33 by yzaim         #+#    #+#                 */
-/*   Updated: 2022/10/17 20:34:58 by yzaim         ########   odam.nl         */
+/*   Updated: 2022/10/18 15:05:09 by yzaim         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-char *ft_lstnew(void)
+t_list *ft_lstnew(void *content)
 {
-	char	*c;
+	t_list	*item;
 
-	c = "hellow";
-	printf("hello!");
-	return (c);
+	item = malloc(sizeof(t_list));
+	if (!item)
+		return (NULL);
+	item->content = content;
+	item->next = NULL;
+	return (item);
 }
