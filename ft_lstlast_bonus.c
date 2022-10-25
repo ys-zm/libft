@@ -13,9 +13,9 @@
 #include "libft.h"
 #include <stdio.h>
 
-t_list *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-	t_list *temp;
+	t_list	*temp;
 
 	temp = lst;
 	if (lst == NULL)

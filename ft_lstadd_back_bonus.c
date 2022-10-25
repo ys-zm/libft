@@ -12,12 +12,21 @@
 
 #include "libft.h"
 
+//how important is it if lst is a NULL pointer, 
+//and if lst is pointing to a NULL value;
+//to reassign *lst = new; 
+//--> can you do that if it is a null pointer;
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list *temp;
+	t_list	*temp;
 
-	if (lst == NULL)
-		return (NULL);
+	if (!new)
+		return ;
+	if (!(*lst))
+	{
+		*lst = new;
+		return ;
+	}
 	temp = *lst;
 	while (temp->next != NULL)
 		temp = temp->next;

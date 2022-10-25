@@ -1,2 +1,3 @@
-gcc -Wall -Werror -Wextra -fsanitize=address -g te.c  -L. -lft && ./a.out
+gcc -Wall -Werror -Wextra -fsanitize=address -g list_test.c  -L. -lft 
+#&& ./a.out
 

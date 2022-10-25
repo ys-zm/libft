@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+/*#include <stdio.h>
 #include "libft.h"
 
 #include <string.h>
@@ -28,7 +28,7 @@
 	}
 } <-- why was this not working*/
 
-int	compare(int in, int exp, int got, char *func)
+/*int	compare(int in, int exp, int got, char *func)
 {
 	if (exp != got)
 	{
@@ -81,4 +81,4 @@ int	main(void)
 	{
 		fails += compare(i, tolower(i), ft_tolower(i), "ft_tolower");
 	}
-}
+}*/

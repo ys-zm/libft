@@ -11,16 +11,17 @@
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include"libft.h"
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char	*str;
+	char	*str;
 
-	str = (unsigned char *)s;
-	while (n-- > 0)
+	str = (char *)s;
+	while (n > 0)
 	{
 		*str = 0;
 		str++;
+		n--;
 	}
 }
