@@ -6,11 +6,12 @@
 /*   By: yzaim <marvin@codam.nl>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/06 13:27:34 by yzaim         #+#    #+#                 */
-/*   Updated: 2022/10/17 16:22:10 by yzaim         ########   odam.nl         */
+/*   Updated: 2022/11/01 16:28:50 by yzaim         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
 
 //append src to dst. append at most dstsize 
 //- strlen(dst) - 1. nul terminate.
@@ -52,7 +53,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	}
 	return (s_len + d_len);
 }
-
 /*int main(void)
 {
 	char dst1[30] = "123456789";

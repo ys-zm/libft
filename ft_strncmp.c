@@ -6,11 +6,12 @@
 /*   By: yzaim <marvin@codam.nl>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/06 13:33:57 by yzaim         #+#    #+#                 */
-/*   Updated: 2022/10/17 16:57:19 by yzaim         ########   odam.nl         */
+/*   Updated: 2022/11/01 16:30:48 by yzaim         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
 
 //compares not more than n characters.
 //return int >, + or < 0. - if s1 is >, + < s2.
@@ -27,7 +28,6 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-
 /*int	main(void)
 {
 	char s1[] = "test\200";

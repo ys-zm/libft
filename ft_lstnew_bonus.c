@@ -6,7 +6,7 @@
 /*   By: yzaim <marvin@codam.nl>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/17 20:06:33 by yzaim         #+#    #+#                 */
-/*   Updated: 2022/10/18 15:05:09 by yzaim         ########   odam.nl         */
+/*   Updated: 2022/11/01 16:11:28 by yzaim         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*item;
 
-	item = malloc(sizeof(t_list));
+	item = (t_list *)malloc(sizeof(t_list));
 	if (!item)
 		return (NULL);
 	item->content = content;

@@ -6,7 +6,7 @@
 /*   By: yzaim <marvin@codam.nl>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/12 14:20:36 by yzaim         #+#    #+#                 */
-/*   Updated: 2022/10/17 15:26:59 by yzaim         ########   odam.nl         */
+/*   Updated: 2022/11/01 16:34:10 by yzaim         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	return (ft_substr(s1, start_i, (end_i - start_i + 1)));
 }
-
 /*int	main(void)
 {
 	char str[] = " ";

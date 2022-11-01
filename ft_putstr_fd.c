@@ -6,7 +6,7 @@
 /*   By: yzaim <marvin@codam.nl>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/13 11:46:34 by yzaim         #+#    #+#                 */
-/*   Updated: 2022/10/13 19:28:44 by yzaim         ########   odam.nl         */
+/*   Updated: 2022/11/01 16:26:46 by yzaim         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,3 +21,9 @@ void	ft_putstr_fd(char *s, int fd)
 		s++;
 	}
 }
+/*
+int	main(void)
+{
+	ft_putstr_fd("string", 1);
+
+}*/

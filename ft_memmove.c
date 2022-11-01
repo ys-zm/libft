@@ -6,11 +6,13 @@
 /*   By: yzaim <marvin@codam.nl>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 17:04:51 by yzaim         #+#    #+#                 */
-/*   Updated: 2022/10/18 12:49:42 by yzaim         ########   odam.nl         */
+/*   Updated: 2022/11/01 16:21:26 by yzaim         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+//#include <stdio.h>
+//#include <string.h>
 #include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
@@ -38,3 +40,14 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return ((void *)dst);
 }
+/*
+int	main(void)
+{
+	char	dst[20] = "Hello";
+	char	dst2[20] = "Hello";
+	char	*src = "hi";
+
+	ft_memmove((void *)dst, (const void *)src, 10);
+	memmove((void *)dst2, (const void *)src, 10);
+	printf("own: %s\noriginal: %s\n", dst, dst2);
+}*/

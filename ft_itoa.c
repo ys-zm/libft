@@ -6,16 +6,16 @@
 /*   By: yzaim <marvin@codam.nl>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/15 14:47:39 by yzaim         #+#    #+#                 */
-/*   Updated: 2022/10/17 17:08:41 by yzaim         ########   odam.nl         */
+/*   Updated: 2022/11/01 16:08:01 by yzaim         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+//#include <stdio.h>
 #include <stdlib.h>
 
 //function adds an extra count for the minus sign
-////converts to +ve to count len
+//converts to +ve to count len
 static int	len(int n)
 {
 	unsigned int	x;
@@ -66,7 +66,6 @@ char	*ft_itoa(int n)
 	}
 	return (str);
 }
-
 /*int	main(void)
 {
 	char	*s;

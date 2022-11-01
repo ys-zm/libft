@@ -6,11 +6,12 @@
 /*   By: yzaim <marvin@codam.nl>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/06 13:24:00 by yzaim         #+#    #+#                 */
-/*   Updated: 2022/10/14 15:51:22 by yzaim         ########   odam.nl         */
+/*   Updated: 2022/11/01 16:29:12 by yzaim         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
 
 //nul termination, if room
 //copy src to dst
@@ -36,8 +37,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	}
 	return (s_len);
 }
-
-/*intmain (void)
+/*
+intmain (void)
 {
 	char	dst1[30] = "123456789";
 	char	dst2[30] = "123456789";

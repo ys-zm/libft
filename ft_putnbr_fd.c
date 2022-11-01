@@ -6,19 +6,19 @@
 /*   By: yzaim <marvin@codam.nl>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/13 11:50:19 by yzaim         #+#    #+#                 */
-/*   Updated: 2022/10/17 17:16:32 by yzaim         ########   odam.nl         */
+/*   Updated: 2022/11/01 16:23:56 by yzaim         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <unistd.h>
 
-void	if_negative(int fd)
+static void	if_negative(int fd)
 {
 	write(fd, "-", 1);
 }
 
-void	min_int(int fd)
+static void	min_int(int fd)
 {
 	write(fd, "-2147483648", 11);
 }

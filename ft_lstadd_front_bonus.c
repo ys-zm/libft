@@ -6,12 +6,12 @@
 /*   By: yzaim <marvin@codam.nl>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/18 12:12:20 by yzaim         #+#    #+#                 */
-/*   Updated: 2022/10/18 14:30:04 by yzaim         ########   odam.nl         */
+/*   Updated: 2022/11/01 16:08:42 by yzaim         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+//#include <stdio.h>
 
 //t_list *new ---> a pointer to a s_list struct variable
 //storing both content and location of 'next' (pointer to struct)
