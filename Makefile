@@ -6,7 +6,7 @@
 #    By: yzaim <marvin@codam.nl>                      +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/06 11:28:58 by yzaim         #+#    #+#                  #
-#    Updated: 2022/11/01 15:54:11 by yzaim         ########   odam.nl          #
+#    Updated: 2022/11/03 11:21:08 by yzaim         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,8 +51,6 @@ SRCFILES = ft_isalpha.c \
 
 OBJFILES = $(SRCFILES:.c=.o)
 
-ALL = $(BONUSFILES) $(SRCFILES)
-
 BONUSFILES = ft_lstnew_bonus.c \
 			 ft_lstadd_front_bonus.c \
 			 ft_lstsize_bonus.c \
@@ -63,7 +61,13 @@ BONUSFILES = ft_lstnew_bonus.c \
 			 ft_lstiter_bonus.c \
 			 ft_lstmap_bonus.c
 
-ALLOBJ = $(ALL:.c=.o)
+BONUSOBJ = $(BONUSFILES:.c=.o)
+
+ifdef WITH_BONUS
+OBJ = $(OBJFILES) $(BONUSOBJ)
+else
+OBJ = $(OBJFILES)
+endif
 
 CC = gcc
 
@@ -75,21 +79,21 @@ ARFLAGS = -rcs
 
 all: $(NAME)
 
-$(NAME): $(OBJFILES) $(HEADER)
-	$(AR) $(ARFLAGS) $@ $^
+$(NAME): $(OBJ) $(HEADER)
+	@$(AR) $(ARFLAGS) $@ $^
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c -o $@ $^
 
 clean:
-	rm -f $(ALLOBJ)
+	rm -f $(OBJFILES) $(BONUSOBJ)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-bonus: $(ALLOBJ)
-	$(AR) $(ARFLAGS) $(NAME) $^
+bonus:
+	@$(MAKE) WITH_BONUS=1
 
 .PHONY: clean fclean all re
